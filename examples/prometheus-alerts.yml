@@ -1,0 +1,18 @@
+groups:
+  - name: anti-ddos
+    rules:
+      - alert: HighEstablishedConnections
+        expr: node_netstat_Tcp_CurrEstab > 10000
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: High TCP established connection count
+
+      - alert: ConntrackNearCapacity
+        expr: node_nf_conntrack_entries / node_nf_conntrack_entries_limit > 0.8
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: Conntrack table is above 80 percent capacity

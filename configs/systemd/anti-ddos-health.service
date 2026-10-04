@@ -1,0 +1,7 @@
+[Unit]
+Description=Linux anti-DDoS health snapshot
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/anti-ddos-health

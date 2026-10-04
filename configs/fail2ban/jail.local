@@ -1,0 +1,13 @@
+[DEFAULT]
+bantime = 1h
+findtime = 10m
+maxretry = 20
+backend = systemd
+banaction = nftables-multiport
+
+# Enable only after matching your application logs.
+# [sshd]
+# enabled = true
+# port = ssh
+# maxretry = 8
+# bantime = 1h
